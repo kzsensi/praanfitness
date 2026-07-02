@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:300,regular,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
+
+.icons-scroll-wrapper {
+  font-family: "Host Grotesk", sans-serif;
+  width: 100vw;
+  /* Add an offset or ensure overflow hidden */
+}
+
+.icons-scroll-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.icons-scroll-wrapper h1 {
+  font-size: 5.5vw;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.icons-scroll-wrapper p {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.icons-scroll-wrapper section {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  color: #e3e3db;
+  overflow: hidden;
+}
+
+.icons-scroll-wrapper .hero {
+  flex-direction: column;
+  transition: background-color 0.3s ease;
+}
+
+.icons-scroll-wrapper .hero-header {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  will-change: transform, opacity, color;
+  z-index: 10;
+  transition: color 0.3s ease;
+}
+
+.icons-scroll-wrapper .animated-icons {
+  position: fixed;
+  bottom: 2rem;
+  left: 32vw;
+  right: 32vw;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  will-change: transform;
+  z-index: 2;
+}
+
+.icons-scroll-wrapper .animated-icon {
+  flex: 1;
+  aspect-ratio: 1;
+  will-change: transform;
+}
+
+.icons-scroll-wrapper .animated-text {
+  position: relative;
+  max-width: 45rem;
+  margin-top: 35vh;
+  text-align: center;
+  color: #000000;
+  font-size: clamp(1rem, 2.2vw, 2rem);
+  font-weight: 800;
+  line-height: 1;
+  z-index: 1;
+}
+
+.icons-scroll-wrapper .text-segment {
+  opacity: 0;
+}
+
+.icons-scroll-wrapper .placeholder-icon {
+  margin-top: -0.625rem;
+  width: 3.75rem;
+  height: 3.75rem;
+  display: inline-block;
+  vertical-align: middle;
+  will-change: transform;
+  visibility: hidden;
+}
+
+/* Side Rails Layout */
+.icons-scroll-wrapper .side-rail {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 5;
+  transition: color 0.3s ease;
+  pointer-events: none;
+  perspective: 1000px;
+}
+
+.icons-scroll-wrapper .left-rail {
+  left: 6vw;
+  width: 250px;
+  text-align: left;
+}
+
+.icons-scroll-wrapper .right-rail {
+  right: 6vw;
+  width: 280px;
+  text-align: right;
+}
+
+.icons-scroll-wrapper .rail-item {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  will-change: transform, opacity, background-color;
+}
+
+.icons-scroll-wrapper .rail-item h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.icons-scroll-wrapper .rail-item p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 62.5rem) {
+  .icons-scroll-wrapper h1 {
+    font-size: 12vw;
+    text-align: center;
+  }
+  .icons-scroll-wrapper p {
+    font-size: 1.1rem;
+  }
+  .icons-scroll-wrapper .hero-header {
+    top: 45%;
+    width: 100%;
+  }
+  .icons-scroll-wrapper .placeholder-icon {
+    margin-top: -0.25rem;
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+  
+  .icons-scroll-wrapper .side-rail {
+    display: none; /* Hide on mobile/tablet as requested */
+  }
+}

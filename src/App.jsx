@@ -1,12 +1,20 @@
 
 import React, { useEffect } from 'react';
 import { Agentation } from "agentation";
+import gsap from 'gsap';
 
+import Header from './components/Header';
 import Hero from './components/Hero';
-import PlainSection from './components/PlainSection';
+import ScrollingCards from './components/ScrollingCards';
 import Rotate from './components/Rotate';
 import Track from './components/Track';
 import Stats from './components/Stats';
+import IconsScroll from './components/IconsScroll';
+import Membership from './components/Membership';
+import Reviews from './components/Reviews';
+import Team from './components/Team';
+import CTA from './components/CTA';
+import Footer from './components/Footer';
 import './index.css';
 import './assets/webflow.css';
 
@@ -17,6 +25,24 @@ export default function App() {
             window.Webflow.ready();
             window.Webflow.require('ix2').init();
         }
+
+        // Custom cursor follower animation
+        const circle = document.getElementById('circle');
+        if (circle) {
+            const xTo = gsap.quickTo(circle, "x", {duration: 0.3, ease: "power3"});
+            const yTo = gsap.quickTo(circle, "y", {duration: 0.3, ease: "power3"});
+
+            const moveCursor = (e) => {
+                xTo(e.clientX);
+                yTo(e.clientY);
+            };
+
+            window.addEventListener("mousemove", moveCursor);
+
+            return () => {
+                window.removeEventListener("mousemove", moveCursor);
+            };
+        }
     }, []);
 
     return (
@@ -25,11 +51,18 @@ export default function App() {
             <div className="custom-cursor-wrapper">
                 <div id="circle" className="circle bg-yellow-500" />
             </div>
+            <Header />
             <Hero />
-            <PlainSection />
+            <ScrollingCards />
             <Rotate />
             <Track />
             <Stats />
+            <IconsScroll />
+            <Membership />
+            <Reviews />
+            <Team />
+            <CTA />
+            <Footer />
         </div>
     );
 }

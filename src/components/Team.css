@@ -1,0 +1,198 @@
+.team-section {
+  font-family: "Host Grotesk", sans-serif;
+  background-color: #f6f4f4;
+  padding: 8rem 5vw;
+  color: #111111;
+  overflow: hidden;
+}
+
+.team-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.team-header h2 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.team-header h2 .dot {
+  color: #4f6d48;
+}
+
+/* Core Team Grid */
+.core-team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 8rem;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform, opacity;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.team-img-placeholder {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background-color: #e3e3db;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.team-img-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-img-placeholder img {
+  transform: scale(1.05);
+}
+
+.team-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.team-card p {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(17, 17, 17, 0.6);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Advisory Committee Section */
+.advisory-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.advisory-header h3 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+}
+
+.advisory-header p {
+  font-size: 1.2rem;
+  color: #4f6d48;
+  font-weight: 500;
+  margin: 0;
+}
+
+.advisory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.advisory-card {
+  display: flex;
+  gap: 2rem;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform, opacity;
+  align-items: center;
+}
+
+.advisory-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.advisory-img-placeholder {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: #e3e3db;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.advisory-img-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.advisory-card:hover .advisory-img-placeholder img {
+  transform: scale(1.05);
+}
+
+.advisory-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.advisory-info h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+}
+
+.advisory-info p {
+  font-size: 1rem;
+  color: rgba(17, 17, 17, 0.7);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive Rules */
+@media (max-width: 1100px) {
+  .core-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .team-section {
+    padding: 5rem 1.5rem;
+  }
+  
+  .core-team-grid, .advisory-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .advisory-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .advisory-img-placeholder {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,135 @@
+.reviews-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+  background-color: #f6f4f4;
+  overflow: hidden;
+  font-family: "Host Grotesk", sans-serif;
+}
+
+.reviews-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 4vw;
+}
+
+.reviews-title {
+  font-size: clamp(4rem, 10vw, 12rem);
+  text-transform: uppercase;
+  line-height: 0.8;
+  font-weight: 800;
+  color: #111111;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.reviews-subtitle {
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  font-weight: 500;
+  color: rgba(17, 17, 17, 0.6);
+  margin-top: 2vw;
+  width: 60%;
+  line-height: 1.4;
+}
+
+.reviews-right {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.reviews-wrapper {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  will-change: transform;
+}
+
+.review-slide {
+  flex-shrink: 0;
+  pointer-events: none;
+  width: 30vw;
+  height: 40vw;
+  border-radius: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5vw;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+}
+
+.review-slide:not(:last-child) {
+  margin-right: 2vw;
+}
+
+.review-text {
+  font-size: clamp(1rem, 2vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #111111;
+  margin: 0;
+}
+
+.review-username {
+  font-size: clamp(0.875rem, 1.5vw, 1.75rem);
+  font-weight: 500;
+  color: rgba(17, 17, 17, 0.6);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .reviews-section {
+    flex-direction: column;
+    height: auto;
+    padding: 10vh 0;
+    gap: 10vw;
+  }
+  
+  .reviews-left {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: 0 5vw;
+  }
+  
+  .reviews-title {
+    font-size: 15vw;
+  }
+  
+  .reviews-subtitle {
+    width: 90%;
+    font-size: 1.2rem;
+    margin-top: 5vw;
+  }
+  
+  .reviews-right {
+    width: 100%;
+    height: 120vw;
+  }
+  
+  .review-slide {
+    width: 75vw;
+    height: 100vw;
+    border-radius: 5vw;
+    padding: 6vw;
+  }
+  
+  .review-slide:not(:last-child) {
+    margin-right: 5vw;
+  }
+  
+  .review-text {
+    font-size: 5vw;
+  }
+  
+  .review-username {
+    font-size: 4vw;
+  }
+}

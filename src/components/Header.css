@@ -1,0 +1,96 @@
+.header-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.header-nav.scrolled {
+  background-color: rgba(22, 22, 22, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+}
+
+.header-logo-link {
+  display: block;
+  position: relative;
+  width: 140px; /* Force a consistent width container */
+  height: 36px;
+  text-decoration: none;
+}
+
+.header-logo-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: left center;
+  transition: opacity 0.3s ease;
+}
+
+.logo-initial {
+  opacity: 1;
+}
+
+.logo-scrolled {
+  opacity: 0;
+}
+
+.header-nav.scrolled .logo-initial {
+  opacity: 0;
+}
+
+.header-nav.scrolled .logo-scrolled {
+  opacity: 1;
+}
+
+.header-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.header-link {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ffffff; /* White initially for dark hero background */
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.header-nav.scrolled .header-link {
+  color: #ffffff; /* Keep it white so it's visible on the dark scrolled header */
+}
+
+.header-link:hover,
+.header-nav.scrolled .header-link:hover {
+  color: #7ab530; /* Green accent from the PraanFitness logo */
+}
+
+@media (max-width: 768px) {
+  .header-links {
+    display: none; /* Hide on mobile for now, can add hamburger later if needed */
+  }
+}
