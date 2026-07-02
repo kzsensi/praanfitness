@@ -91,7 +91,8 @@ export default function ScrollingCards() {
         );
 
         gsap.set(stickyCards, {
-          y: `${gsap.utils.mapRange(0, 1, 50, -50, enterProgress)}%`,
+          xPercent: -50,
+          yPercent: gsap.utils.mapRange(0, 1, -10, -80, enterProgress),
         });
         gsap.set(heroHeadline, {
           y: `${gsap.utils.mapRange(0, 1, 0, -100, enterProgress)}%`,
@@ -113,7 +114,8 @@ export default function ScrollingCards() {
             gsap.utils.mapRange(dismissStart, dismissEnd, 0, 1, progress),
           );
           gsap.set(card, {
-            y: `${gsap.utils.mapRange(0, 1, -50, -250, dismissProgress)}%`,
+            xPercent: -50,
+            yPercent: gsap.utils.mapRange(0, 1, -80, -250, dismissProgress),
             rotation: gsap.utils.mapRange(
               0,
               1,
