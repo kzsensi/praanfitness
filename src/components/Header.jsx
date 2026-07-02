@@ -22,8 +22,8 @@ export default function Header() {
     <nav className={`header-nav ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         <a href="#" className="header-logo-link">
-          <img src="/logo_dark.png" alt="PraanFitness Logo Dark" className="header-logo-img logo-initial" />
-          <img src="/white_logo_icon.png" alt="PraanFitness Logo Light" className="header-logo-img logo-scrolled" />
+          <img src="/logo_dark.webp" alt="PraanFitness Logo Dark" className="header-logo-img logo-initial" />
+          <img src="/white_logo_icon.webp" alt="PraanFitness Logo Light" className="header-logo-img logo-scrolled" />
         </a>
         
         <div className="header-links">

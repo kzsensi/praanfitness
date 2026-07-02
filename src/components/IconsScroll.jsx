@@ -4,11 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import './IconsScroll.css';
 
-import icon1 from '../assets/icons/icon_1.png';
-import icon2 from '../assets/icons/icon_2.png';
-import icon3 from '../assets/icons/icon_3.png';
-import icon4 from '../assets/icons/icon_4.png';
-import icon5 from '../assets/icons/icon_5.png';
+import icon1 from '../assets/icons/icon_1.webp';
+import icon2 from '../assets/icons/icon_2.webp';
+import icon3 from '../assets/icons/icon_3.webp';
+import icon4 from '../assets/icons/icon_4.webp';
+import icon5 from '../assets/icons/icon_5.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

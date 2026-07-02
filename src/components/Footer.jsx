@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <img src="/logo.png" alt="PraanFitness Logo" className="footer-logo" />
+            <img src="/logo.webp" alt="PraanFitness Logo" className="footer-logo" />
             <p>Empowering you with a holistic ecosystem for a stronger body, sharper mind, and a perfectly balanced life.</p>
           </div>
           

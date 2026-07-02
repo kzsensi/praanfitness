@@ -10,22 +10,22 @@ const coreTeam = [
   {
     name: "Dr. Agni",
     role: "Cardiology & Diabetology Expert",
-    img: "/agni.png"
+    img: "/agni.webp"
   },
   {
     name: "Dr. Pushkar",
     role: "MBBS & Health Strategist",
-    img: "/pushkar.png"
+    img: "/pushkar.webp"
   },
   {
     name: "Mr. Surendra Kumar",
     role: "Senior Frontend Developer (13+)",
-    img: "/surendra.png"
+    img: "/surendra.webp"
   },
   {
     name: "Dr. Deepshikhaa",
     role: "MBBS & Health Strategist",
-    img: "/deepshikha.png"
+    img: "/deepshikha.webp"
   }
 ];
 
@@ -33,12 +33,12 @@ const advisoryCommittee = [
   {
     name: "Mr. Shashi Kumar",
     desc: "Mr. Shashi Kumar is an entrepreneur, educator, and the Founder & Director of Sacred Gurukul, a DPIIT-recognized startup focused on skill development and employability.",
-    img: "/Shashi_Kumar.png"
+    img: "/Shashi_Kumar.webp"
   },
   {
     name: "Mr. Arjun Mishra",
     desc: "BAMS Scholar redefining healthcare with a blend of clinical insight, technology, and timeless Ayurvedic principles.",
-    img: "/Arjun_mishra.png"
+    img: "/Arjun_mishra.webp"
   }
 ];
 

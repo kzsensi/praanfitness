@@ -10,7 +10,7 @@ export default function Stats() {
         <div className="stats-card-new">
           
           <div className="stats-card-top-left-logo">
-            <img src="/logo.png" alt="PraanFitness Logo" className="logo-text-img" style={{width: "140px", objectFit: "contain"}} />
+            <img src="/logo.webp" alt="PraanFitness Logo" className="logo-text-img" style={{width: "140px", objectFit: "contain"}} />
             <div className="logo-subtext">AI PERFORMANCE INTELLIGENCE</div>
           </div>
 
@@ -79,7 +79,7 @@ export default function Stats() {
 
           {/* Main Visual */}
           <div className="main-visual-container right-card">
-            <img src="/meditation_woman.png" alt="Meditation and Recovery" className="main-visual-img" />
+            <img src="/meditation_woman.webp" alt="Meditation and Recovery" className="main-visual-img" />
           </div>
 
           <div className="floating-circle-img float-food">

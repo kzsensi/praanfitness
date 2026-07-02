@@ -6,7 +6,7 @@ export default function Hero() {
     <>
       <section className="hero-desktop">
         <img 
-          src="/hero.png" 
+          src="/hero.webp" 
           alt="Hero" 
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
         />
@@ -95,7 +95,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <img src="/hero-bg-svg-mob.png" alt="Hero Mobile" className="hero-mobile-img" />
+        <img src="/hero-bg-svg-mob.webp" alt="Hero Mobile" className="hero-mobile-img" />
       </section>
     </>
   );
