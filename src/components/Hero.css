@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 .hero-desktop {
   height: 100vh;
   width: 100%;
@@ -25,12 +27,15 @@
 }
 
 .hero-mobile h1 {
-  font-size: 4rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(3.2rem, 13vw, 4.5rem);
   font-weight: 800;
   line-height: 1.05;
   color: #111;
   margin: 0 0 1rem 0;
   letter-spacing: -0.02em;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .hero-mobile h1 .dot {
