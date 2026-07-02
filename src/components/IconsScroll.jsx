@@ -63,6 +63,26 @@ export default function IconsScroll() {
     
     const scrollEnd = window.innerHeight * 5;
 
+    // Initialize rail items to their starting positions to prevent overlapping before scroll trigger fires
+    const initialActiveIndex = -1.5;
+    const curveStrength = 100;
+    const itemGap = 150;
+
+    leftRailItems.forEach((item, i) => {
+      const distance = i - initialActiveIndex;
+      const abs = Math.abs(distance);
+      const y = distance * itemGap;
+      const scale = Math.max(0.5, 1 - abs * 0.25);
+      const opacity = Math.max(0, 1 - abs * 0.38);
+      const blurValue = abs * 0.5;
+      
+      const leftX = -1 * curveStrength * Math.pow(abs, 1.35);
+      const rightX = 1 * curveStrength * Math.pow(abs, 1.35);
+      
+      gsap.set(item, { x: leftX, y: y, scale, opacity: 0 });
+      gsap.set(rightRailItems[i], { x: rightX, y: y, scale, opacity: 0 });
+    });
+
     ScrollTrigger.create({
       trigger: heroSection.current,
       start: 'top top',
