@@ -136,6 +136,7 @@
   padding: 1.5rem 2rem;
   border-radius: 16px;
   will-change: transform, opacity, background-color;
+  opacity: 0;
 }
 
 .icons-scroll-wrapper .rail-item h3 {

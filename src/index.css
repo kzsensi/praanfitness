@@ -289,9 +289,15 @@
         .bg-anim-wrapper {
             background-color: #f6f4f4;
             width: 100%;
-            margin-top: -100vh;
+            margin-top: -15vh;
             position: relative;
             z-index: 20;
+        }
+        
+        @media (max-width: 768px) {
+            .bg-anim-wrapper {
+                margin-top: -30vh;
+            }
         }
         
         .rotate-sc, .track-section {
