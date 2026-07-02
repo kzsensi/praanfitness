@@ -27,7 +27,7 @@
 .icons-scroll-wrapper section {
   position: relative;
   width: 100vw;
-  height: 100svh;
+  height: 100vh;
   padding: 1.5rem;
   display: flex;
   align-items: center;
@@ -145,11 +145,8 @@
   line-height: 1.2;
 }
 
-.icons-scroll-wrapper .rail-item p {
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin: 0;
-  line-height: 1.4;
+.icons-scroll-wrapper .mobile-static-rail {
+  display: none;
 }
 
 @media (max-width: 62.5rem) {
@@ -170,7 +167,37 @@
     height: 1.875rem;
   }
   
-  .icons-scroll-wrapper .side-rail {
-    display: none; /* Hide on mobile/tablet as requested */
+  .icons-scroll-wrapper .left-rail,
+  .icons-scroll-wrapper .right-rail {
+    display: none !important;
+  }
+  
+  .icons-scroll-wrapper .mobile-static-rail {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    background-color: #f6f4f4;
+    color: #111111;
+  }
+  
+  .icons-scroll-wrapper .mobile-static-rail .mobile-rail-item {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+  
+  .icons-scroll-wrapper .mobile-static-rail p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+  .icons-scroll-wrapper .mobile-static-rail strong {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #000000;
   }
 }

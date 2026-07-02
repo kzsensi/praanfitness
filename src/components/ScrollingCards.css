@@ -46,7 +46,7 @@
 .scrolling-cards-wrapper section {
   position: relative;
   width: 100%;
-  height: 100svh;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -58,7 +58,7 @@
 .scrolling-cards-wrapper .hero-content {
   position: absolute;
   width: 100%;
-  height: 100svh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,7 +73,7 @@
 .scrolling-cards-wrapper .sticky-cards {
   position: absolute;
   width: 100%;
-  height: 100svh;
+  height: 100vh;
   overflow: hidden;
   transform-style: preserve-3d;
   perspective: 1000px;
@@ -149,5 +149,12 @@
 @media (max-width: 1000px) {
   .scrolling-cards-wrapper .hero-content .sc-h1 {
     width: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  .scrolling-cards-wrapper .hero-content {
+    align-items: flex-start;
+    padding-top: 10vh;
   }
 }

@@ -74,7 +74,7 @@
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 1px;
-  color: #ffffff; /* White initially for dark hero background */
+  color: #111111; /* Black initially for light hero background */
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.2s ease;
@@ -89,8 +89,77 @@
   color: #7ab530; /* Green accent from the PraanFitness logo */
 }
 
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #111; /* Dark icon initially */
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.header-nav.scrolled .mobile-menu-btn {
+  color: #fff; /* White icon when scrolled */
+}
+
 @media (max-width: 768px) {
   .header-links {
-    display: none; /* Hide on mobile for now, can add hamburger later if needed */
+    display: none;
   }
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001; /* Ensure button stays above overlay */
+  }
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(22, 22, 22, 0.98);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.mobile-menu-overlay.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.mobile-link {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.mobile-link:hover {
+  color: #7ab530;
 }

@@ -1,46 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 
 export default function Rotate() {
   const sectionRef = useRef(null);
 
-  useEffect(() => {
-    const el = sectionRef.current;
-    if (!el) return;
-
-    let isUpdating = false;
-    const observer = new MutationObserver((mutations) => {
-      if (isUpdating) return;
-      if (el.classList.contains('gsap-custom-bg')) return;
-      
-      const bg = el.style.backgroundColor;
-      if (!bg) return;
-      
-      const match = bg.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
-      if (match) {
-        const r = parseInt(match[1]);
-        const g = parseInt(match[2]);
-        const b = parseInt(match[3]);
-        
-        // Map Webflow's 0-255 to 0-246, 0-244, 0-244 (#f6f4f4)
-        const mappedR = Math.round((r / 255) * 246);
-        const mappedG = Math.round((g / 255) * 244);
-        const mappedB = Math.round((b / 255) * 244);
-        
-        isUpdating = true;
-        el.style.backgroundColor = `rgb(${mappedR}, ${mappedG}, ${mappedB})`;
-        
-        // Allow Webflow to trigger the next mutation, but we ignore our own update
-        Promise.resolve().then(() => { isUpdating = false; });
-      }
-    });
-
-    observer.observe(el, { attributes: true, attributeFilter: ['style'] });
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <>
-      <section ref={sectionRef} style={{ backgroundColor: 'rgb(0,0,0)' }} className="rotate-sc">
+      <section ref={sectionRef} className="rotate-sc">
         <div className="rotate-height">
           <div data-w-id="9daae68c-791a-b52b-db16-559b608e3973" className="rotate-subheight">
             <div className="rotate-sticky">
@@ -82,16 +47,16 @@ export default function Rotate() {
                 <div className="rotate-swap-headers-wrapper">
                   <div className="rotate-swap-icons">
                     <div data-w-id="8e411552-adb0-16bd-82e7-3a5c5b06588d" className="rotate-swap-icon">
-                      <div className="swap-iocn"><img src="https://cdn.prod.website-files.com/667fa6c733097c1516bb9760/667fa6c733097c1516bb978d_swap-icon-2436.webp" loading="lazy" alt className="image-contain" /></div>
+                      <div className="swap-iocn" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.5rem' }}>📋</div>
                     </div>
                     <div data-w-id="379bbc29-f9ea-385d-47af-e46ddc422dad" className="rotate-swap-icon">
-                      <div className="swap-iocn"><img src="https://cdn.prod.website-files.com/667fa6c733097c1516bb9760/667fa6c733097c1516bb978a_swap-icon-2435.webp" loading="lazy" alt className="image-contain" /></div>
+                      <div className="swap-iocn" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.5rem' }}>🎯</div>
                     </div>
                     <div data-w-id="6fe3ae2b-1889-f5c0-4131-58531a49c9de" className="rotate-swap-icon">
-                      <div className="swap-iocn"><img src="https://cdn.prod.website-files.com/667fa6c733097c1516bb9760/667fa6c733097c1516bb978b_swap-icon-2437.webp" loading="lazy" alt className="image-contain" /></div>
+                      <div className="swap-iocn" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.5rem' }}>🏋️</div>
                     </div>
                     <div data-w-id="a77075ed-f1bf-7294-8ad5-21aa1b7a1896" className="rotate-swap-icon">
-                      <div className="swap-iocn"><img src="https://cdn.prod.website-files.com/667fa6c733097c1516bb9760/667fa6c733097c1516bb978c_swap-icon-2438.webp" loading="lazy" alt className="image-contain" /></div>
+                      <div className="swap-iocn" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.5rem' }}>⚡</div>
                     </div>
                   </div>
                   <div className="rotate-swap-headers-frame">

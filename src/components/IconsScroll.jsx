@@ -13,11 +13,11 @@ import icon5 from '../assets/icons/icon_5.png';
 gsap.registerPlugin(ScrollTrigger);
 
 const featureData = [
-  { left: "01 Health Tracking", right: "Real-time vitals, biomarkers, wearable integration, AI reports." },
-  { left: "02 Personalized Plans", right: "Fitness, diet, recovery, and wellness plans tailored to your body." },
-  { left: "03 Doctor Access", right: "Consult doctors and certified health professionals when needed." },
-  { left: "04 PRAAN Digital Health ID", right: "Securely store and share reports, records, and health history." },
-  { left: "05 24x7 Support", right: "Medical help, fitness guidance, and emergency support via chat and call." }
+  { left: "Health Tracking", right: "Real-time vitals, biomarkers, wearable integration, AI reports." },
+  { left: "Personalized Plans", right: "Fitness, diet, recovery, and wellness plans tailored to your body." },
+  { left: "Doctor Access", right: "Consult doctors and certified health professionals when needed." },
+  { left: "PRAAN Digital Health ID", right: "Securely store and share reports, records, and health history." },
+  { left: "24x7 Support", right: "Medical help, fitness guidance, and emergency support via chat and call." }
 ];
 
 export default function IconsScroll() {
@@ -345,6 +345,8 @@ export default function IconsScroll() {
           ))}
         </div>
 
+
+
         <div className="animated-icons">
           <div className="animated-icon icon-1">
             <img src={icon1} alt="" />
@@ -375,6 +377,15 @@ export default function IconsScroll() {
           <span className="text-segment">and move forward with constant support.</span>
         </h1>
       </section>
+
+      {/* Mobile Combined Rail - Normal Static Flow */}
+      <div className="mobile-static-rail">
+        {featureData.map((item, index) => (
+          <div key={`mob-${index}`} className="mobile-rail-item">
+            <p><strong>{item.left} :</strong> {item.right}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

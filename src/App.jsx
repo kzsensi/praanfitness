@@ -54,8 +54,10 @@ export default function App() {
             <Header />
             <Hero />
             <ScrollingCards />
-            <Rotate />
-            <Track />
+            <div className="bg-anim-wrapper">
+                <Rotate />
+                <Track />
+            </div>
             <Stats />
             <IconsScroll />
             <Membership />

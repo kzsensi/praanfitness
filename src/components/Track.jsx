@@ -10,10 +10,10 @@ export default function Track() {
   const sectionRef = useRef(null);
 
   useGSAP(() => {
-    const rotateSection = document.querySelector('.rotate-sc');
-    const targets = rotateSection ? [sectionRef.current, rotateSection] : sectionRef.current;
+    const wrapper = document.querySelector('.bg-anim-wrapper');
+    if (!wrapper) return;
 
-    gsap.fromTo(targets, 
+    gsap.fromTo(wrapper, 
       { backgroundColor: '#f6f4f4' }, 
       {
         backgroundColor: '#000000',
@@ -21,9 +21,7 @@ export default function Track() {
           trigger: sectionRef.current,
           start: "top 60%", 
           end: "top 10%", 
-          scrub: true,
-          onEnter: () => rotateSection?.classList.add('gsap-custom-bg'),
-          onLeaveBack: () => rotateSection?.classList.remove('gsap-custom-bg')
+          scrub: true
         }
       }
     );

@@ -285,6 +285,24 @@
         body {
             overflow: hidden;
         }
+        
+        .bg-anim-wrapper {
+            background-color: #f6f4f4;
+            width: 100%;
+        }
+        
+        .rotate-sc, .track-section {
+            background-color: transparent !important;
+        }
+        
+        @media (max-width: 768px) {
+            .rotate-sc .rotate-first-header p,
+            .rotate-sc .rotate-first-header h2,
+            .rotate-sc .rotate-swap-header-cell h3,
+            .rotate-sc .rotate-swap-header-cell p {
+                color: #111111 !important;
+            }
+        }
     
 
                                         textarea {

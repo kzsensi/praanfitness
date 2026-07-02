@@ -84,6 +84,26 @@
   margin: 0;
 }
 
+.reviews-scrollbar {
+  position: absolute;
+  bottom: 2vw;
+  left: 0;
+  width: 95%; /* Match the visual space minus right margin */
+  height: 6px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.reviews-scrollbar-thumb {
+  height: 100%;
+  width: 15%; /* Thumb size */
+  background-color: #111111;
+  border-radius: 10px;
+  transform: translateX(0);
+  will-change: transform;
+}
+
 @media (max-width: 768px) {
   .reviews-section {
     flex-direction: column;
@@ -131,5 +151,16 @@
   
   .review-username {
     font-size: 4vw;
+  }
+  
+  .reviews-scrollbar {
+    bottom: 5vw;
+    width: 90%;
+    left: 5%;
+    height: 4px;
+  }
+  
+  .reviews-scrollbar-thumb {
+    width: 25%;
   }
 }

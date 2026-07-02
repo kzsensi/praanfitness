@@ -14,6 +14,7 @@ const slidesData = [
 
 const Reviews = () => {
   const wrapperRef = useRef(null);
+  const thumbRef = useRef(null);
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
@@ -69,6 +70,13 @@ const Reviews = () => {
             `;
           }
         });
+
+        const thumb = thumbRef.current;
+        if (thumb && instance.maxScroll < 0) {
+          const progress = Math.min(1, Math.max(0, instance.current / instance.maxScroll));
+          const maxTranslate = thumb.parentElement.offsetWidth - thumb.offsetWidth;
+          thumb.style.transform = `translateX(${progress * maxTranslate}px)`;
+        }
       }
     });
 
@@ -127,6 +135,10 @@ const Reviews = () => {
               <p className="review-username">{slide.username}</p>
             </div>
           ))}
+        </div>
+        
+        <div className="reviews-scrollbar">
+          <div className="reviews-scrollbar-thumb" ref={thumbRef}></div>
         </div>
       </div>
     </div>
