@@ -4,14 +4,14 @@ import './Hero.css';
 export default function Hero() {
   const mobileImages = [
     "/hero-bg-svg-mob.webp",
-    "/hero-bg-svg-mob2.png",
-    "/hero-bg-svg-mob3.png"
+    "/hero-bg-svg-mob2.webp",
+    "/hero-bg-svg-mob3.webp"
   ];
   
   const desktopImages = [
-    "/hero-bg-svg.png",
-    "/hero-bg-svg2.png",
-    "/hero-bg-svg3.png"
+    "/hero-bg-svg.webp",
+    "/hero-bg-svg2.webp",
+    "/hero-bg-svg3.webp"
   ];
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
