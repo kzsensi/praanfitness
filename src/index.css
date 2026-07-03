@@ -282,10 +282,6 @@
             background: #fff;
         }
 
-        body {
-            overflow: hidden;
-        }
-        
         .bg-anim-wrapper {
             background-color: #f6f4f4;
             width: 100%;

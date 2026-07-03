@@ -44,7 +44,7 @@ const Membership = () => {
   }, { scope: sectionRef });
 
   return (
-    <section className="membership-section" ref={sectionRef}>
+    <section id="programs" className="membership-section" ref={sectionRef}>
       <div className="membership-header">
         <div className="membership-eyebrow">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

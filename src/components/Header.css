@@ -70,7 +70,7 @@
 }
 
 .header-link {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -150,7 +150,7 @@
 }
 
 .mobile-link {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 1px;

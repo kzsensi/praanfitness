@@ -1,15 +1,72 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Hero.css';
 
 export default function Hero() {
+  const mobileImages = [
+    "/hero-bg-svg-mob.webp",
+    "/hero-bg-svg-mob2.png",
+    "/hero-bg-svg-mob3.png"
+  ];
+  
+  const desktopImages = [
+    "/hero-bg-svg.png",
+    "/hero-bg-svg2.png",
+    "/hero-bg-svg3.png"
+  ];
+  
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentDesktopImageIndex, setCurrentDesktopImageIndex] = useState(0);
+
+  useEffect(() => {
+    const mobileInterval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % mobileImages.length);
+    }, 3500); // Crossfade every 3.5 seconds
+
+    const desktopInterval = setInterval(() => {
+      setCurrentDesktopImageIndex((prev) => (prev + 1) % desktopImages.length);
+    }, 5000); // Slow crossfade every 5 seconds
+
+    return () => {
+      clearInterval(mobileInterval);
+      clearInterval(desktopInterval);
+    };
+  }, []);
+
   return (
     <>
       <section className="hero-desktop">
-        <img 
-          src="/hero.webp" 
-          alt="Hero" 
-          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
-        />
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
+          {desktopImages.map((src, index) => {
+            const isActive = index === currentDesktopImageIndex;
+            const isPrev = index === (currentDesktopImageIndex === 0 ? desktopImages.length - 1 : currentDesktopImageIndex - 1);
+
+            return (
+              <img 
+                key={src}
+                src={src} 
+                alt={`Hero Desktop ${index + 1}`} 
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  zIndex: isActive ? 2 : (isPrev ? 1 : 0),
+                  clipPath: isActive ? 'inset(0 0 0 0)' : (isPrev ? 'inset(0 0 0 0)' : 'inset(0 100% 0 0)'),
+                  transition: isActive ? 'clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1)' : 'none',
+                  opacity: (isActive || isPrev) ? 1 : 0,
+                  pointerEvents: 'none'
+                }}
+              />
+            );
+          })}
+        </div>
+        
+        <div className="hero-desktop-content">
+          <h1>Human<br />performance,<br />rebuilt<span className="green-dot">.</span></h1>
+          <p>Fitness, medicine, and AI in one system.</p>
+        </div>
         <div style={{ position: 'absolute', left: '6%', top: '78%', display: 'flex', gap: '1.5rem', zIndex: 10 }}>
           <a href="#join" style={{ 
             backgroundColor: '#7ab536', 
@@ -53,7 +110,7 @@ export default function Hero() {
 
       <section className="hero-mobile">
         <div className="hero-mobile-content">
-          <h1>Human<br />performance,<br />rebuilt<span className="dot">.</span></h1>
+          <h1>Human<br />performance,<br />rebuilt<span className="green-dot">.</span></h1>
           <p>Fitness, medicine, and AI in one system.</p>
         </div>
         
@@ -95,7 +152,24 @@ export default function Hero() {
           </a>
         </div>
 
-        <img src="/hero-bg-svg-mob.webp" alt="Hero Mobile" className="hero-mobile-img" />
+        <div className="hero-mobile-img-container">
+          {mobileImages.map((src, index) => (
+            <img 
+              key={src}
+              src={src} 
+              alt={`Hero Mobile ${index + 1}`} 
+              className="hero-mobile-img"
+              style={{
+                position: index === 0 ? 'relative' : 'absolute',
+                top: 0,
+                left: 0,
+                opacity: index === currentImageIndex ? 1 : 0,
+                transition: 'opacity 1s ease-in-out',
+                pointerEvents: 'none'
+              }}
+            />
+          ))}
+        </div>
       </section>
     </>
   );

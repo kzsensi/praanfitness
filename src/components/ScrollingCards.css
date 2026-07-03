@@ -14,7 +14,7 @@
 .scrolling-cards-wrapper .sc-h1,
 .scrolling-cards-wrapper .sc-h3 {
   text-transform: uppercase;
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-weight: 900;
   line-height: 0.85;
 }
@@ -156,5 +156,54 @@
   .scrolling-cards-wrapper .hero-content {
     align-items: flex-start;
     padding-top: 20vh;
+  }
+}
+
+.scrolling-cards-wrapper .side-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25%;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  font-weight: 500;
+  color: var(--base-800);
+  will-change: transform, opacity;
+  z-index: 10;
+  line-height: 1.4;
+  opacity: 0;
+}
+
+.scrolling-cards-wrapper .left-side-text {
+  left: 5%;
+  text-align: left;
+}
+
+.scrolling-cards-wrapper .right-side-text {
+  right: 5%;
+  text-align: right;
+}
+
+@media (max-width: 1000px) {
+  .scrolling-cards-wrapper .side-text {
+    width: 90%;
+    left: 5%;
+    right: auto;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  .scrolling-cards-wrapper .left-side-text {
+    top: 78%; 
+  }
+  
+  .scrolling-cards-wrapper .right-side-text {
+    top: 88%; 
+  }
+}
+
+@media (max-width: 768px) {
+  .scrolling-cards-wrapper .side-text {
+    display: none !important;
   }
 }

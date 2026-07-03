@@ -14,6 +14,7 @@ export default function ScrollingCards() {
     const frontStickyCard = gsap.utils.toArray(".card-front")[0];
     const backStickyCards = gsap.utils.toArray(".card-back");
     const heroHeadline = gsap.utils.toArray(".hero-content")[0];
+    const sideTexts = gsap.utils.toArray(".side-text");
     const stickyCardCount = backStickyCards.length;
 
     const CARDS_ENTER_END = 100;
@@ -98,6 +99,19 @@ export default function ScrollingCards() {
           y: `${gsap.utils.mapRange(0, 1, 0, -100, enterProgress)}%`,
         });
 
+        const [lastDismissStart, lastDismissEnd] = cardDismissRanges[0];
+        const lastCardDismissProgress = gsap.utils.clamp(
+          0,
+          1,
+          gsap.utils.mapRange(lastDismissStart, lastDismissEnd, 0, 1, progress)
+        );
+
+        gsap.set(sideTexts, {
+          y: gsap.utils.mapRange(0, 1, window.innerHeight * 0.8, 0, enterProgress) + 
+             gsap.utils.mapRange(0, 1, 0, -window.innerHeight * 1.5, lastCardDismissProgress),
+          opacity: enterProgress
+        });
+
         if (progress > svhToProgress(CARD_FLIP_TRIGGER) && !isFlipped) {
           revealBackCards();
           isFlipped = true;
@@ -137,6 +151,17 @@ export default function ScrollingCards() {
       <section className="hero">
         <div className="hero-content">
           <h1 className="sc-h1">PRAAN Is A Human Performance System.</h1>
+        </div>
+
+        <div className="side-text left-side-text">
+          Beyond training.<br/>
+          Praan begins where traditional fitness stops.
+        </div>
+        
+        <div className="side-text right-side-text">
+          Personalized by data.<br/>
+          Guided by doctors.<br/>
+          Improved through progress.
         </div>
 
         <div className="sticky-cards">

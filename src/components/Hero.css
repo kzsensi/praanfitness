@@ -7,6 +7,39 @@
   display: block;
 }
 
+.hero-desktop-content {
+  position: absolute;
+  left: 6%;
+  top: 19%;
+  transform: scale(0.9);
+  transform-origin: left top;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-desktop h1 {
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(4rem, 8vw, 7.5rem);
+  font-weight: 400;
+  line-height: 1;
+  color: #111;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: 0em;
+}
+
+.hero-desktop h1 .green-dot {
+  color: #7ab536;
+}
+
+.hero-desktop p {
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: #555;
+  margin: 0;
+  font-weight: 500;
+}
+
 .hero-mobile {
   display: none;
   background-color: #f6f4f4;
@@ -15,7 +48,7 @@
   padding-top: 120px; /* space for header */
   position: relative;
   overflow: hidden;
-  font-family: "Host Grotesk", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 .hero-mobile-content {
@@ -27,7 +60,7 @@
 }
 
 .hero-mobile h1 {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: clamp(3.2rem, 13vw, 4.5rem);
   font-weight: 800;
   line-height: 1.05;
@@ -38,7 +71,7 @@
   hyphens: auto;
 }
 
-.hero-mobile h1 .dot {
+.hero-mobile h1 .green-dot {
   color: #7ab536;
 }
 
@@ -64,12 +97,16 @@
   justify-content: center;
 }
 
+.hero-mobile-img-container {
+  position: relative;
+  margin-top: -2rem;
+  width: 100%;
+}
+
 .hero-mobile-img {
   width: 100%;
   display: block;
-  position: relative;
   z-index: 1;
-  margin-top: -2rem; /* Overlap slightly if needed */
   object-fit: cover;
 }
 

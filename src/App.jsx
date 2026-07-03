@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { Agentation } from "agentation";
 import gsap from 'gsap';
 
+import Preloader from './components/Preloader';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import ScrollingCards from './components/ScrollingCards';
@@ -47,6 +48,7 @@ export default function App() {
 
     return (
         <div className="page-wrapper">
+            <Preloader />
             {import.meta.env.DEV && <Agentation />}
             <div className="custom-cursor-wrapper">
                 <div id="circle" className="circle bg-yellow-500" />
