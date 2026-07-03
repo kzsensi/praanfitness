@@ -15,6 +15,7 @@ import Membership from './components/Membership';
 import Reviews from './components/Reviews';
 import About from './components/About';
 import Team from './components/Team';
+import Contact from './components/Contact';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import './index.css';
@@ -68,6 +69,7 @@ export default function App() {
             <About />
             <Team />
             <CTA />
+            <Contact />
             <Footer />
         </div>
     );

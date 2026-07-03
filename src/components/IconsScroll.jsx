@@ -340,7 +340,7 @@ export default function IconsScroll() {
   }, { scope: container });
 
   return (
-    <div className="icons-scroll-wrapper" ref={container}>
+    <div id="services" className="icons-scroll-wrapper" ref={container}>
       <section className="hero" ref={heroSection}>
         <div className="hero-header">
           <h1>Everything your perfomance needs.</h1>

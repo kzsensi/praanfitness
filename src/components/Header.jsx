@@ -27,10 +27,10 @@ export default function Header() {
         </a>
         
         <div className="header-links">
-          <a href="#training" className="header-link">Training</a>
-          <a href="#nutrition" className="header-link">Nutrition</a>
-          <a href="#performance" className="header-link">Performance</a>
+          <a href="#" className="header-link" onClick={(e) => { e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'}); }}>Home</a>
           <a href="#about" className="header-link">About</a>
+          <a href="#services" className="header-link">Services</a>
+          <a href="#contact" className="header-link">Contact</a>
         </div>
         
         <button 
@@ -55,10 +55,10 @@ export default function Header() {
 
       <div className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`}>
         <div className="mobile-menu-links">
-          <a href="#training" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Training</a>
-          <a href="#nutrition" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Nutrition</a>
-          <a href="#performance" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Performance</a>
+          <a href="#" className="mobile-link" onClick={(e) => { e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'}); setIsMenuOpen(false); }}>Home</a>
           <a href="#about" className="mobile-link" onClick={() => setIsMenuOpen(false)}>About</a>
+          <a href="#services" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Services</a>
+          <a href="#contact" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Contact</a>
         </div>
       </div>
     </nav>
