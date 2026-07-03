@@ -33,7 +33,7 @@ export default function Rotate() {
                     </div>
                     <div className="rotate-card card-3">
                       <div className="video-cover set-3 w-embed">
-                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop" alt="Training" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <img src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?q=80&w=800&auto=format&fit=crop" alt="Monitoring and regulation" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       </div>
                     </div>
                     <div className="rotate-card card-4">
@@ -69,8 +69,8 @@ export default function Rotate() {
                       <p className="body-b2 gray-3">Your workout, nutrition, recovery, and wellness plan is built around your personal needs.</p>
                     </div>
                     <div className="rotate-swap-header-cell set-3">
-                      <h3 className="heading-5">03 Training</h3>
-                      <p className="body-b2 gray-3">You train through gym, yoga, coaching, and structured physical programs.</p>
+                      <h3 className="heading-5">03. Monitoring and regulation</h3>
+                      <p className="body-b2 gray-3">Continue monitoring of your day to day health</p>
                     </div>
                     <div className="rotate-swap-header-cell set-4">
                       <h3 data-w-id="ac9bb2b9-b9be-0ad3-52fc-c1cef36ab1d5" style={{ color: 'rgb(255,255,255)' }} className="heading-5">04 Optimization</h3>

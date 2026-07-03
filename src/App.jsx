@@ -64,7 +64,7 @@ export default function App() {
             </div>
             <Stats />
             <IconsScroll />
-            <Membership />
+            {/* <Membership /> */}
             <Reviews />
             <About />
             <Team />
