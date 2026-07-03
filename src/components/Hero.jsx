@@ -20,11 +20,11 @@ export default function Hero() {
   useEffect(() => {
     const mobileInterval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % mobileImages.length);
-    }, 3500); // Crossfade every 3.5 seconds
+    }, 2500); // Start next image every 2.5s
 
     const desktopInterval = setInterval(() => {
       setCurrentDesktopImageIndex((prev) => (prev + 1) % desktopImages.length);
-    }, 5000); // Slow crossfade every 5 seconds
+    }, 2500); // Start next image every 2.5s
 
     return () => {
       clearInterval(mobileInterval);
@@ -54,7 +54,7 @@ export default function Hero() {
                   objectFit: 'cover',
                   zIndex: isActive ? 2 : (isPrev ? 1 : 0),
                   clipPath: isActive ? 'inset(0 0 0 0)' : (isPrev ? 'inset(0 0 0 0)' : 'inset(0 100% 0 0)'),
-                  transition: isActive ? 'clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1)' : 'none',
+                  transition: isActive ? 'clip-path 2s cubic-bezier(0.77, 0, 0.175, 1)' : 'none',
                   opacity: (isActive || isPrev) ? 1 : 0,
                   pointerEvents: 'none'
                 }}
@@ -164,7 +164,7 @@ export default function Hero() {
                 top: 0,
                 left: 0,
                 opacity: index === currentImageIndex ? 1 : 0,
-                transition: 'opacity 1s ease-in-out',
+                transition: 'opacity 2s ease-in-out',
                 pointerEvents: 'none'
               }}
             />

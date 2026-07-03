@@ -29,20 +29,46 @@ const CTA = () => {
   return (
     <section id="join" className="cta-section" ref={ctaRef}>
       <div className="cta-container">
-        <img 
-          src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop" 
-          alt="Transform your health" 
-          style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '24px', marginBottom: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }} 
-        />
-        <h2 className="cta-title">Ready to transform your health?</h2>
-        <p className="cta-subtitle">Join the complete performance ecosystem designed for your unique body and mind.</p>
-        <a href="#join" className="cta-btn">
-          Join PraanFitness Now
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
+        <div className="cta-left">
+          <img 
+            src="/logo.webp" 
+            alt="PraanFitness Logo" 
+            style={{ height: '60px', width: 'auto', marginBottom: '2rem' }} 
+          />
+          <h2 className="cta-title">Ready to transform your health?</h2>
+          <p className="cta-subtitle">Join the complete performance ecosystem designed for your unique body and mind.</p>
+        </div>
+        
+        <div className="cta-right">
+          <div className="cta-form-container">
+            <form className="cta-form" onSubmit={(e) => e.preventDefault()}>
+              <div className="cta-form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your full name" required />
+              </div>
+              <div className="cta-form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="Enter your email" required />
+              </div>
+              <div className="cta-form-group">
+                <label>Select Your Plan</label>
+                <select required defaultValue="">
+                  <option value="" disabled>Choose a plan...</option>
+                  <option value="foundation">FOUNDATION</option>
+                  <option value="premium">PREMIUM</option>
+                  <option value="leader">LEADER CHOICE</option>
+                </select>
+              </div>
+              <div className="cta-form-group">
+                <label>Your Goals</label>
+                <textarea placeholder="Tell us about your fitness goals..." required></textarea>
+              </div>
+              <button type="submit" className="cta-submit">
+                Submit Request
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   );
