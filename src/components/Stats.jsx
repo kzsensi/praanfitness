@@ -68,7 +68,18 @@ export default function Stats() {
             </div>
           </div>
 
-          <div className="stats-text-content">
+          {/* Mobile-only: image + text side by side */}
+          <div className="stats-mobile-row">
+            <div className="stats-mobile-img">
+              <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=300&auto=format&fit=crop" alt="Yoga movement" />
+            </div>
+            <div className="stats-text-content stats-mobile-text">
+              <h2 className="stats-headline">{"Track what matters.\nImprove what matters."}</h2>
+              <p className="stats-subtext">See progress across movement, consistency, and recovery.</p>
+            </div>
+          </div>
+
+          <div className="stats-text-content stats-desktop-text">
             <h2 className="stats-headline">{"Track what matters.\nImprove what matters."}</h2>
             <p className="stats-subtext">See progress across movement,<br />consistency, and recovery.</p>
           </div>
@@ -127,7 +138,18 @@ export default function Stats() {
             </div>
           </div>
 
-          <div className="stats-text-content">
+          {/* Mobile-only: image + text side by side */}
+          <div className="stats-mobile-row">
+            <div className="stats-mobile-img">
+              <img src="/meditation_woman.webp" alt="Meditation and Recovery" />
+            </div>
+            <div className="stats-text-content stats-mobile-text">
+              <h2 className="stats-headline">{"Your body data,\ntranslated into action."}</h2>
+              <p className="stats-subtext">Guidance for training, recovery, nutrition, and follow-up.</p>
+            </div>
+          </div>
+
+          <div className="stats-text-content stats-desktop-text">
             <h2 className="stats-headline">{"Your body data,\ntranslated into action."}</h2>
             <p className="stats-subtext">Guidance for training, recovery,<br />nutrition, and follow-up.</p>
           </div>

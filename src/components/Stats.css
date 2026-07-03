@@ -1,7 +1,7 @@
 .stats-sc {
   background-color: #000000 !important;
   color: #ffffff;
-  padding: 60px 5%;
+  padding: 40px 4%;
   font-family: "DM Sans", sans-serif;
   display: flex;
   justify-content: center;
@@ -238,6 +238,11 @@
   border-radius: 2px;
 }
 
+/* MOBILE-ONLY ROW (hidden on desktop) */
+.stats-mobile-row {
+  display: none;
+}
+
 /* TYPOGRAPHY */
 .stats-text-content {
   position: relative;
@@ -273,7 +278,85 @@
 }
 
 @media (max-width: 991px) {
-  .stats-container { padding: 40px 20px; }
-  .stats-card-new { min-height: 600px; padding: 40px 20px; }
-  .stats-headline { font-size: 32px; }
+  .stats-sc { padding: 20px 3%; }
+  .stats-container { gap: 16px; }
+
+  /* Restructure card to a simple column on mobile */
+  .stats-card-new {
+    min-height: auto;
+    height: auto;
+    padding: 20px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  /* Hide ALL absolute-positioned desktop elements */
+  .stats-card-top-left-logo,
+  .orbit-svg,
+  .main-visual-container,
+  .main-visual-container.right-card,
+  .floating-circle-img,
+  .data-chip,
+  .stats-desktop-text {
+    display: none !important;
+  }
+
+  /* Show the mobile row instead */
+  .stats-mobile-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .stats-mobile-img {
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  }
+  .stats-mobile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .stats-mobile-text {
+    position: relative !important;
+    text-align: left !important;
+    margin: 0 !important;
+    flex: 1;
+    z-index: 1;
+  }
+
+  .stats-headline {
+    font-size: 18px;
+    margin-bottom: 6px;
+    white-space: normal;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+  }
+  .stats-subtext {
+    font-size: 12px;
+    width: 100%;
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-mobile-img {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+  }
+  .stats-headline { font-size: 15px; }
+  .stats-subtext { font-size: 11px; }
 }

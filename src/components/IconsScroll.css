@@ -161,6 +161,7 @@
   .icons-scroll-wrapper .hero-header {
     top: 45%;
     width: 100%;
+    gap: 0.5rem;
   }
   .icons-scroll-wrapper .placeholder-icon {
     margin-top: -0.25rem;
